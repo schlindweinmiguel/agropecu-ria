@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agropecuária São Cristóvão</title>
+  <meta name="description" content="Agropecuária São Cristóvão — Inovando o campo com tecnologia. Sistema de irrigação inteligente, loja e contato." />
+  <style>
+    :root{ --green:#2e7d32; --accent:#4caf50; --muted:#6b6b6b; --bg:#f4f9f4; --card:#ffffff; --radius:12px; }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#222}
+    header{background:linear-gradient(90deg,var(--green),var(--accent)); color:white;padding:20px 16px}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:white;display:flex;align-items:center;justify-content:center;color:var(--green);font-weight:700}
+    nav{margin-left:auto}
+    nav a{color:white;text-decoration:none;margin-left:14px;font-weight:600}
+
+    main{padding:28px 0}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+    .hero-card{background:var(--card);padding:26px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    .hero h1{margin:0 0 8px;font-size:28px;color:var(--green)}
+    .hero p{margin:0 0 16px;color:var(--muted)}
+    .cta-row{display:flex;gap:10px}
+    .btn{background:var(--green);color:white;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .btn.secondary{background:transparent;color:var(--green);border:2px solid var(--green)}
+
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
+    .product{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 12px rgba(0,0,0,0.04)}
+    .product h3{margin:6px 0}
+
+    .irrigation{margin-top:26px;display:flex;gap:16px;flex-wrap:wrap}
+    .irrig-card{flex:1 1 320px;background:linear-gradient(180deg, #fff, #f7fff7);padding:16px;border-radius:12px}
+    .meter{width:140px;height:140px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#eaf7ea,#ffffff);border:6px solid rgba(46,125,50,0.12);font-weight:700}
+
+    form.contact{display:grid;gap:10px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #ddd;font-size:14px}
+
+    footer{padding:24px 0;color:#fff;background:#163f1a;margin-top:40px}
+    .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:20px}
+
+    /* responsive */
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center">
+      <div class="brand">
+        <div class="logo" aria-hidden>AS</div>
+        <div>
+          <div style="font-weight:800">Agropecuária São Cristóvão</div>
+          <small style="color:rgba(255,255,255,0.9)">Inovando o campo com tecnologia</small>
+        </div>
+      </div>
+      <nav aria-label="menu" style="margin-left:auto">
+        <a href="#home">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#irrigacao">Irrigação</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <div class="hero-card" role="region" aria-labelledby="hero-title">
+        <h1 id="hero-title">Inovando o campo com tecnologia</h1>
+        <p>Integração entre loja, monitoramento e automação para otimizar recursos e aumentar a produtividade.</p>
+        <div class="cta-row">
+          <button class="btn" id="open-products">Ver Produtos</button>
+          <button class="btn secondary" id="open-irrigation">Ver Irrigação</button>
+        </div>
+
+        <div style="margin-top:18px">
+          <h3>Missão</h3>
+          <p style="color:var(--muted);margin:6px 0">Oferecer soluções agrícolas práticas, sustentáveis e acessíveis para produtores e proprietários rurais.</p>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="banner">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=60" alt="Fazenda verde" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:12px">
+        <h4 style="margin:0 0 8px">Sistema de Irrigação Inteligente</h4>
+        <p style="color:var(--muted);margin:0 0 12px">Controle automático por sensores de umidade e acesso remoto via app.</p>
+        <div style="display:flex;gap:8px">
+          <button class="btn" id="activate-hero">Ativar Irrigação</button>
+          <button class="btn secondary" id="learn-more">Saiba Mais</button>
+        </div>
+      </aside>
+    </section>
+
+    <section id="produtos" style="margin-top:28px">
+      <h2>Produtos em destaque</h2>
+      <div class="products" role="list">
+        <article class="product" role="listitem">
+          <h3>Ração Premium</h3>
+          <p>Alta nutrição para seu rebanho — embalagem 25kg.</p>
+          <p style="font-weight:700">R$ 89,90</p>
+        </article>
+
+        <article class="product" role="listitem">
+          <h3>Adubo Orgânico</h3>
+          <p>Adubo natural para melhorar a produtividade do solo.</p>
+          <p style="font-weight:700">R$ 45,00</p>
+        </article>
+
+        <article class="product" role="listitem">
+          <h3>Kit Sensor de Umidade</h3>
+          <p>Sensor FC-28 + cabo para integração com Arduino.</p>
+          <p style="font-weight:700">R$ 79,90</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="irrigacao" style="margin-top:28px">
+      <h2>Sistema de Irrigação</h2>
+      <div class="irrigation">
+        <div class="irrig-card">
+          <h4>Status do Sistema</h4>
+          <div style="display:flex;align-items:center;gap:18px;margin-top:12px">
+            <div class="meter" id="meter">--%</div>
+            <div>
+              <p style="margin:0 0 10px">Nível de umidade do solo</p>
+              <div style="display:flex;gap:8px">
+                <button class="btn" id="btn-on">Ligar Irrigação</button>
+                <button class="btn secondary" id="btn-off">Desligar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="irrig-card">
+          <h4>Visão Geral</h4>
+          <p style="color:var(--muted)">Os sensores relatam automaticamente os níveis de umidade. O sistema pode ser operado manualmente pelo site ou pelo aplicativo móvel.</p>
+          <ul style="color:var(--muted);margin-top:10px">
+            <li>Economia de água</li>
+            <li>Agendamento automático</li>
+            <li>Alertas em tempo real</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" style="margin-top:28px">
+      <h2>Contato</h2>
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:18px">
+        <form class="contact" aria-label="formulário de contato">
+          <input type="text" name="nome" placeholder="Seu nome" required />
+          <input type="email" name="email" placeholder="Seu e-mail" required />
+          <textarea name="mensagem" rows="5" placeholder="Sua mensagem"></textarea>
+          <div style="display:flex;gap:8px">
+            <button class="btn" type="submit">Enviar Mensagem</button>
+            <button class="btn secondary" type="reset">Limpar</button>
+          </div>
+        </form>
+
+        <div style="background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 12px rgba(0,0,0,0.04)">
+          <h4>Localização</h4>
+          <p style="color:var(--muted)">Capanema - PR</p>
+          <div style="margin-top:10px;">
+            <iframe title="mapa" src="https://www.google.com/maps?q=Capanema%20PR&output=embed" style="width:100%;height:160px;border:0;border-radius:8px"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Agropecuária São Cristóvão</strong>
+        <div style="color:rgba(255,255,255,0.85)">© 2025 — Capanema, PR</div>
+      </div>
+      <div style="color:rgba(255,255,255,0.9)">Contato: (00) 0000-0000 • contato@agrocristovao.com</div>
+    </div>
+  </footer>
+
+  <script>
+    // Simulação simples de leitura de umidade (substituir por API real)
+    const meter = document.getElementById('meter');
+    const btnOn = document.getElementById('btn-on');
+    const btnOff = document.getElementById('btn-off');
+    const openProducts = document.getElementById('open-products');
+    const openIrrigation = document.getElementById('open-irrigation');
+    const activateHero = document.getElementById('activate-hero');
+
+    function updateFakeHumidity(){
+      const value = Math.floor(Math.random()*60)+20; // 20% - 80%
+      meter.textContent = value + '%';
+      meter.style.fontSize = '20px';
+    }
+    setInterval(updateFakeHumidity, 2500);
+    updateFakeHumidity();
+
+    btnOn.addEventListener('click', ()=>{
+      alert('Comando enviado: Ligar irrigação (simulação)');
+    });
+    btnOff.addEventListener('click', ()=>{
+      alert('Comando enviado: Desligar irrigação (simulação)');
+    });
+
+    openProducts.addEventListener('click', ()=>{
+      document.getElementById('produtos').scrollIntoView({behavior:'smooth'});
+    });
+    openIrrigation.addEventListener('click', ()=>{
+      document.getElementById('irrigacao').scrollIntoView({behavior:'smooth'});
+    });
+    activateHero.addEventListener('click', ()=>{
+      alert('Ação: Ativar irrigação (simulação)');
+    });
+
+    // formulário: evitar reload e simular submit
+    document.querySelector('form.contact').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Mensagem enviada. Obrigado! (simulação)');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
