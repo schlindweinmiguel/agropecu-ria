@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irrigação Inteligente - Agropecuária São Cristóvão</title>
+  <style>
+    :root {
+      --green: #2e7d32;
+      --accent: #4caf50;
+      --bg: #f4f9f4;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: #222;
+    }
+    header {
+      background: linear-gradient(90deg, var(--green), var(--accent));
+      color: white;
+      padding: 18px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: var(--green);
+      text-align: center;
+    }
+    h2 {
+      color: var(--green);
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.6;
+      text-align: justify;
+    }
+    .tipos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .card {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    button {
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: var(--accent);
+    }
+    .status {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <div style="width:56px;height:56px;border-radius:10px;background:white;color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:800">AS</div>
+        <div>
+          <div style="font-weight:800">Agropecuária São Cristóvão</div>
+          <small>Inovando o campo com tecnologia</small>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1>Sistema de Irrigação Inteligente</h1>
+    <p>
+      A irrigação inteligente da Agropecuária São Cristóvão tem como objetivo otimizar o uso da água, garantindo 
+      eficiência e sustentabilidade nas lavouras. O sistema utiliza sensores e controle automatizado, simulando o 
+      funcionamento de um sistema real de irrigação agrícola.
+    </p>
+
+    <h2>Tipos de Irrigação</h2>
+    <div class="tipos">
+      <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2017/06/19/19/47/sprinkler-2423800_960_720.jpg" alt="Aspersão">
+        <h3>Aspersão</h3>
+        <p>Distribui a água em gotas, simulando a chuva. Ideal para hortas e áreas de grama.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2020/04/28/17/48/irrigation-5105413_960_720.jpg" alt="Gotejamento">
+        <h3>Gotejamento</h3>
+        <p>Fornece água diretamente às raízes, economizando água e energia.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2016/11/19/12/54/agriculture-1835728_960_720.jpg" alt="Pivô Central">
+        <h3>Pivô Central</h3>
+        <p>Usado em grandes plantações, gira em torno de um ponto fixo irrigando uniformemente.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2022/06/15/09/26/irrigation-7263264_960_720.jpg" alt="Automatizado">
+        <h3>Automatizado</h3>
+        <p>Controlado por sensores de umidade e temporizadores, simulando automação Arduino.</p>
+      </div>
+    </div>
+
+    <h2>Simulação de Controle</h2>
+    <p>Use o painel abaixo para simular o acionamento do sistema de irrigação:</p>
+
+    <div class="card" style="max-width:400px;margin:auto;">
+      <h3>Painel de Controle</h3>
+      <button id="ligar">💧 Ligar Irrigação</button>
+      <button id="desligar">⛔ Desligar Irrigação</button>
+      <div class="status" id="status">Status: Desligado ❌</div>
+    </div>
+
+    <h2>Dicas de Irrigação Sustentável</h2>
+    <ul>
+      <li>Monitore a umidade do solo antes de irrigar;</li>
+      <li>Evite irrigar durante o meio-dia, para reduzir a evaporação;</li>
+      <li>Use sensores de solo e temporizadores para automatizar o processo;</li>
+      <li>Realize manutenção regular nos sistemas de irrigação.</li>
+    </ul>
+  </main>
+
+  <script>
+    const status = document.getElementById('status');
+    document.getElementById('ligar').addEventListener('click', () => {
+      status.textContent = "Status: Irrigação Ligada ✅";
+      status.style.color = "green";
+    });
+    document.getElementById('desligar').addEventListener('click', () => {
+      status.textContent = "Status: Desligado ❌";
+      status.style.color = "red";
+    });
+  </script>
+</body>
+</html>
